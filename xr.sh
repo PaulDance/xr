@@ -45,6 +45,11 @@ function _dl_exo() {
     cd $(exercism download --uuid="$1" 2>/dev/null | tail -n 1)
 }
 
+function _run_tests() {
+    sed -i 's/#\[ignore\]$//g' tests/*.rs
+    cargo +nightly test --all-features
+}
+
 function xr() {
     if [[ "$#" == "0" || "$#" -gt "2" ]]; then
         echo "$_short_doc"

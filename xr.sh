@@ -25,7 +25,8 @@ Arguments:
 Commands:
     help    Display this message.
     notes   Dump the contents of the mentoring notes for the current exercise
-            to the standard output, as deduced by reading the exercise config.
+            to the standard output, as deduced by reading the exercise config,
+            or from an exercise or topic of your choice through a second argument.
     test    Activate all unit tests available by modifying files and run them
             with all features activated in nightly environment. This is the
             default command when not specifying one but still giving a UUID.
@@ -78,6 +79,23 @@ function xr() {
             "help")
                 echo "$_long_doc"
                 return 0
+            ;;
+            "notes")
+                local note="$_dir/notes"
+
+                if [[ "$#" == "2" ]]; then
+                    note="$note/$2.md"
+                else
+                    note="$note/$(_config_get exercise).md"
+                fi
+
+                if [[ -f "$note" ]]; then
+                    cat "$note"
+                    return 0
+                else
+                    echo "Unknown exercise or topic note: $note"
+                    return 1
+                fi
             ;;
             "test" | "bench")
                 if [[ "$#" == "2" ]]; then

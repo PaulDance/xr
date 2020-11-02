@@ -1,6 +1,7 @@
 # Main plugin file.
 
 _exo_config=".exercism/metadata.json"
+_dir="$(dirname "$(readlink -f "$0")")"
 
 read -r -d '' _short_doc << EOF
 Usage: xr [<command>] [<uuid>]
@@ -49,6 +50,21 @@ function _run_tests() {
     cargo +nightly test --all-features
 }
 
+function _run_benches() {
+    local exo="$(_config_get exercise)"
+    local bench_loc="$_dir/benches/$exo.rs"
+
+    if [[ -f "$bench_loc" ]]; then
+        mkdir -p "./benches"
+        cp "$bench_loc" './benches/custom.rs'
+        cargo +nightly bench --all-features
+        return 0
+    else
+        echo "Unknown custom bench: $bench_loc"
+        return 1
+    fi
+}
+
 function _is_uuid() {
     return $([[ "$1" =~ '^[a-z0-9]{32}$' ]])
 }
@@ -63,7 +79,7 @@ function xr() {
                 echo "$_long_doc"
                 return 0
             ;;
-            "test")
+            "test" | "bench")
                 if [[ "$#" == "2" ]]; then
                     if _is_uuid "$2"; then
                         _dl_exo "$2"
@@ -73,7 +89,15 @@ function xr() {
                     fi
                 fi
 
-                _run_tests
+                case "$1" in
+                    "test")
+                        _run_tests
+                    ;;
+                    "bench")
+                        _run_benches
+                    ;;
+                esac
+
                 return 0
             ;;
             *)

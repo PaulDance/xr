@@ -35,6 +35,12 @@ Commands:
             \`$_exo_config\` configuration file.
 EOF
 
+function _config_get() {
+    grep -Eo "\"$1\""':"[a-zA-Z0-9]+"' "$_exo_config" \
+        | cut -d':' -f2 \
+        | cut -d'"' -f2
+}
+
 function xr() {
     if [[ "$#" == "0" || "$#" -gt "2" ]]; then
         echo "$_short_doc"

@@ -1,6 +1,5 @@
 # Main plugin file.
 
-_uuid_len=32
 _exo_config=".exercism/metadata.json"
 
 read -r -d '' _short_doc << EOF
@@ -50,13 +49,44 @@ function _run_tests() {
     cargo +nightly test --all-features
 }
 
+function _is_uuid() {
+    return $([[ "$1" =~ '^[a-z0-9]{32}$' ]])
+}
+
 function xr() {
     if [[ "$#" == "0" || "$#" -gt "2" ]]; then
         echo "$_short_doc"
         return 1
-    elif [[ "$1" == "help" ]]; then
-        echo "$_long_doc"
-        return 0
+    else
+        case "$1" in
+            "help")
+                echo "$_long_doc"
+                return 0
+            ;;
+            "test")
+                if [[ "$#" == "2" ]]; then
+                    if _is_uuid "$2"; then
+                        _dl_exo "$2"
+                    else
+                        echo "Invalid UUID: $2"
+                        return 1
+                    fi
+                fi
+
+                _run_tests
+                return 0
+            ;;
+            *)
+                if _is_uuid "$1"; then
+                    _dl_exo "$1"
+                    _run_tests
+                    return 0
+                else
+                    echo "Unsupported command: $1"
+                    return 1
+                fi
+            ;;
+        esac
     fi
 }
 

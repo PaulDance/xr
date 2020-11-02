@@ -41,6 +41,10 @@ function _config_get() {
         | cut -d'"' -f2
 }
 
+function _dl_exo() {
+    cd $(exercism download --uuid="$1" 2>/dev/null | tail -n 1)
+}
+
 function xr() {
     if [[ "$#" == "0" || "$#" -gt "2" ]]; then
         echo "$_short_doc"

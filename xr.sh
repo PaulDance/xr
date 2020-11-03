@@ -37,7 +37,7 @@ Commands:
 EOF
 
 function _config_get() {
-    grep -Eo "\"$1\""':"[a-zA-Z0-9]+"' "$_exo_config" \
+    grep -Eo "\"$1\""':"[a-zA-Z0-9-]+"' "$_exo_config" \
         | cut -d':' -f2 \
         | cut -d'"' -f2
 }

@@ -6,6 +6,7 @@ _dir="$(dirname "$(readlink -f "$0")")"
 read -r -d '' _short_doc << EOF
 Usage: xr [<command>] [<uuid>]
     help    Display a more complete help message.
+    clean   Remove all the downloaded student submissions.
     notes   Print the mentoring notes for the current or given exercise.
     edit    Open the mentoring notes in an editor.
     test    Run the tests.
@@ -25,6 +26,8 @@ Arguments:
 
 Commands:
     help    Display this message.
+    clean   Confirm and remove all the downloaded student submissions from the
+            filesystem using \`exercism\` in order to determine their location.
     notes   Dump the contents of the mentoring notes for the current exercise
             to the standard output, as deduced by reading the exercise config,
             or from an exercise or topic of your choice through a second argument.
@@ -81,6 +84,11 @@ function xr() {
         case "$1" in
             "help")
                 echo "$_long_doc"
+            ;;
+            "clean")
+                local dir="$(exercism workspace)/users" \
+                    && echo "Will delete: $dir" \
+                    && rm -rI "$dir"
             ;;
             "notes" | "edit")
                 local note="$_dir/notes"

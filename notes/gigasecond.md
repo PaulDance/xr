@@ -18,6 +18,8 @@ think it's really needed, though it's fine to do so. I'm told by several people
 that [cargo-asm](https://crates.io/crates/cargo-asm) shows that either way
 compiles into the same assembly instructions.
 
+You may find [[chrono::NaiveTime](https://docs.rs/chrono/0.4.19/chrono/naive/struct.NaiveTime.html)] with [[chrono::Duration](https://docs.rs/chrono/0.4.19/chrono/struct.Duration.html)] to be helpful with the `Clock` exercise.
+
 Since this passed all the tests I can approve it if you want to let it stand as
 is, or you can submit a refactored solution which uses less ceremony if you
 wish.

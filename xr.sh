@@ -6,7 +6,8 @@ _dir="$(dirname "$(readlink -f "$0")")"
 read -r -d '' _short_doc << EOF
 Usage: xr [<command>] [<uuid>]
     help    Display a more complete help message.
-    notes   Print the mentoring notes for the current exercise.
+    notes   Print the mentoring notes for the current or given exercise.
+    edit    Open the mentoring notes in an editor.
     test    Run the tests.
     bench   Copy the custom benchmarks into 'benches' and run them.
 EOF
@@ -27,6 +28,10 @@ Commands:
     notes   Dump the contents of the mentoring notes for the current exercise
             to the standard output, as deduced by reading the exercise config,
             or from an exercise or topic of your choice through a second argument.
+    edit    Open the mentoring notes for the current exercise in the editor
+            specified by the EDITOR environment variable, as deduced by reading
+            the exercise's configuration, or from an exercise or topic of your
+            choice through a second argument.
     test    Activate all unit tests available by modifying files and run them
             with all features activated in nightly environment. This is the
             default command when not specifying one but still giving a UUID.
@@ -77,7 +82,7 @@ function xr() {
             "help")
                 echo "$_long_doc"
             ;;
-            "notes")
+            "notes" | "edit")
                 local note="$_dir/notes"
 
                 if [[ "$#" == "2" ]]; then
@@ -87,7 +92,11 @@ function xr() {
                 fi
 
                 if [[ -f "$note" ]]; then
-                    cat "$note"
+                    if [[ "$1" == "notes" ]]; then
+                        cat "$note"
+                    else
+                        $EDITOR "$note"
+                    fi
                 else
                     echo "Unknown exercise or topic note: $note"
                     return 1

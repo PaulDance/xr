@@ -47,19 +47,17 @@ function _dl_exo() {
 }
 
 function _run_tests() {
-    sed -i 's/#\[ignore\]$//g' tests/*.rs
-    cargo +nightly test --all-features
+    sed -i 's/#\[ignore\]$//g' tests/*.rs \
+        && cargo +nightly test --all-features
 }
 
 function _run_benches() {
-    local exo="$(_config_get exercise)"
-    local bench_loc="$_dir/benches/$exo.rs"
+    local bench_loc="$_dir/benches/$(_config_get exercise).rs"
 
     if [[ -f "$bench_loc" ]]; then
-        mkdir -p "./benches"
-        cp "$bench_loc" './benches/custom.rs'
-        cargo +nightly bench --all-features
-        return 0
+        mkdir -p "./benches" \
+            && cp "$bench_loc" './benches/custom.rs' \
+            && cargo +nightly bench --all-features
     else
         echo "Unknown custom bench: $bench_loc"
         return 1
@@ -67,7 +65,7 @@ function _run_benches() {
 }
 
 function _is_uuid() {
-    return $([[ "$1" =~ '^[a-z0-9]{32}$' ]])
+    [[ "$1" =~ '^[a-z0-9]{32}$' ]]
 }
 
 function xr() {
@@ -78,7 +76,6 @@ function xr() {
         case "$1" in
             "help")
                 echo "$_long_doc"
-                return 0
             ;;
             "notes")
                 local note="$_dir/notes"
@@ -91,7 +88,6 @@ function xr() {
 
                 if [[ -f "$note" ]]; then
                     cat "$note"
-                    return 0
                 else
                     echo "Unknown exercise or topic note: $note"
                     return 1
@@ -115,14 +111,11 @@ function xr() {
                         _run_benches
                     ;;
                 esac
-
-                return 0
             ;;
             *)
                 if _is_uuid "$1"; then
-                    _dl_exo "$1"
-                    _run_tests
-                    return 0
+                    _dl_exo "$1" \
+                        && _run_tests
                 else
                     echo "Unsupported command: $1"
                     return 1

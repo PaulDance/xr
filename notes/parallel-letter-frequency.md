@@ -6,6 +6,12 @@ Congratulations on passing all the tests!
 
 - I like that it is well-commented.
 
+There is a limitation around threads: they were previously scoped, i.e. could
+infer data was only used inside a certain context, but they now enforce a
+`static` lifetime requirement for borrowed values. If you would like to try
+getting better performance, I suggest you take a look at some parallelization
+crates such as:
+
 It's good to get familiar with other crates like
 [threadpool](https://crates.io/crates/threadpool),
 [crossbeam-utils](https://crates.io/crates/crossbeam-utils),
@@ -22,6 +28,19 @@ is usually faster than the parallel. Older versions of Rust usually were in the
 test bench_large_parallel   ... bench:     376,536 ns/iter (+/- 228,650)
 test bench_large_sequential ... bench:     761,475 ns/iter (+/- 37,847)
 ```
+
+The use of channels is actually not necessary here: a thread may return a
+value, therefore you can simply map loads to workers and reduce their results
+into one hashmap. This is known as the
+[map-reduce](https://en.wikipedia.org/wiki/MapReduce) method.
+
+You probably noticed that it becomes worse than a sequential algorithm when
+considering small work loads. That is kind of expected in any parallelism
+attempt: setting up OS threads surprisingly takes a considerable amount of
+time, which is one of the reasons behind [asynchronous
+programming](https://rust-lang.github.io/async-book/). If you really want the
+best possible performance in every situation, then you can try to find a
+threshold under which you switch to a sequential implementation.
 
 If you like video tutorials, you may find [a video by Ryan
 Levick](https://www.youtube.com/watch?v=2mwwYbBRJSo) to be informative. In the

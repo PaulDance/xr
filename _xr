@@ -1,0 +1,10 @@
+#compdef xr
+
+_arguments '1:subcommand:((
+    help:"display a detailled description"
+    clean:"remove downloaded submissions"
+    notes:"print mentoring notes from deduced or given exercise or topic"
+    edit:"open editor on mentoring notes from deduced or given exercise"
+    test:"download a given submission and run its tests"
+    bench:"download a given submission, import a custom benchmark and run it"
+))'

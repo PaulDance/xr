@@ -1,3 +1,24 @@
+Congratulations on passing all the tests!
+
+If you cared to, for further exercise, you might try an 
+[iter](https://doc.rust-lang.org/std/primitive.slice.html#method.iter),
+a [map](https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.map) and a
+[collect](https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.collect). 
+Using a list of 
+[tuples](https://doc.rust-lang.org/stable/rust-by-example/primitives/tuples.html)
+to iterate over, e.g. `(3, "Pling")`, would work well with that approach. There 
+are other ways that a `match` on a `tuple` could work, for example...
+
+```rust
+pub fn raindrops(n: u32) -> String {
+    let output = match (n % 3 == 0, n % 5 == 0, n % 7 == 0) {
+        (true, false, false) => "Pling",
+//and so on
+```
+
+Viewing the community solutions may offer other approaches to this exercise 
+which you may find interesting.
+
 Strings and slices can be confusing for anyone who knows another language, since
 what looks like a
 [String](https://doc.rust-lang.org/std/string/struct.String.html) literal is

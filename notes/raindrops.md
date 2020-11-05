@@ -10,12 +10,10 @@ to iterate over, e.g. `(3, "Pling")`, would work well with that approach. There
 are other ways that a `match` on a `tuple` could work, for example...
 
 ```rust
-
 pub fn raindrops(n: u32) -> String {
     let output = match (n % 3 == 0, n % 5 == 0, n % 7 == 0) {
         (true, false, false) => "Pling",
 //and so on
-
 ```
 
 Viewing the community solutions may offer other approaches to this exercise 

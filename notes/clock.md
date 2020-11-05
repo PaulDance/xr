@@ -23,6 +23,12 @@ which returns non-negative results, or
 [div_euclid](https://doc.rust-lang.org/std/primitive.i32.html#method.div_euclid)
 for Euclidean division. These were made stable in Rust 1.38.
 
+Another approach to consider would be to use 
+[chrono::NaiveTime](https://docs.rs/chrono/0.4.19/chrono/naive/struct.NaiveTime.html)
+with 
+[chrono::Duration](https://docs.rs/chrono/0.4.19/chrono/struct.Duration.html).
+The `chrono` crate was introduced in the Gigasecond exercise.
+
 Another thing to consider is how the `Clock::new` function could be bypassed by
 initializing from a Clock literal, like so...
 

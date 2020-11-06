@@ -99,14 +99,17 @@ function xr() {
                     note="$note/$(_config_get exercise).md"
                 fi
 
-                if [[ -f "$note" ]]; then
-                    if [[ "$1" == "notes" ]]; then
+                if [[ "$1" == "notes" ]]; then
+                    if [[ -f "$note" ]]; then
                         cat "$note"
                     else
-                        $EDITOR "$note"
+                        echo "Unknown exercise or topic note: $note"
+                        return 1
                     fi
+                elif [[ "$(basename $note)" != ".md" ]]; then
+                    $EDITOR "$note"
                 else
-                    echo "Unknown exercise or topic note: $note"
+                    echo "Current directory is not an exercise."
                     return 1
                 fi
             ;;

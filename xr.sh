@@ -1,5 +1,6 @@
 # Main plugin file.
 
+# Constants.
 _exo_config=".exercism/metadata.json"
 _dir="$(dirname "$(readlink -f "$0")")"
 
@@ -47,16 +48,19 @@ Commands:
             \`$_exo_config\` configuration file.
 EOF
 
+# Returns the value associated to the given key in the exercise's configuration.
 function _config_get() {
     grep -Eo "\"$1\""':"[a-zA-Z0-9-]+"' "$_exo_config" \
         | cut -d':' -f2 \
         | cut -d'"' -f2
 }
 
+# Downloads and goes to the directory of the given UUID's exercise.
 function _dl_exo() {
     cd $(exercism download --uuid="$1" 2>/dev/null | tail -n 1)
 }
 
+# Fetches the track-specific functions from the dedicated script.
 function _src_track() {
     local script="$_dir/tracks/$(_config_get track).sh"
 
@@ -68,10 +72,12 @@ function _src_track() {
     fi
 }
 
+# Tests whether the given string is a valid UUID or not.
 function _is_uuid() {
     [[ "$1" =~ '^[a-z0-9]{32}$' ]]
 }
 
+# Public function.
 function xr() {
     if [[ "$#" == "0" || "$#" -gt "2" ]]; then
         echo "$_short_doc"

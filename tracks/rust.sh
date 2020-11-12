@@ -1,8 +1,10 @@
+# Hard-activates and runs all the available tests.
 function _run_tests() {
     sed -i 's/#\[ignore\]$//g' tests/*.rs \
         && cargo +nightly test --all-features
 }
 
+# Copies the stored benchmarks into the dedicated sub-directory and runs them.
 function _run_benches() {
     local bench_loc="$_dir/benches/rust/$(_config_get exercise).rs"
 

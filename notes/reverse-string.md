@@ -12,9 +12,13 @@ pub fn reverse(input: &str) -> String {
 }
 ```
 
-since the [last expression can be
+You don't need to use `return` since the [last expression can be
 returned](https://doc.rust-lang.org/rust-by-example/fn.html) from a function
 without using `return` and a semicolon.
+
+If you want to try the bonus task concerning grapheme clusters, I suggest you
+take a look at the
+[`unicode-segmentation`](https://crates.io/crates/unicode-segmentation) crate.
 
 If you ever care to, you may want to check out the
 [unicode-reverse](https://crates.io/crates/unicode-reverse) crate as another

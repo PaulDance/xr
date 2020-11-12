@@ -54,20 +54,13 @@ function _dl_exo() {
     cd $(exercism download --uuid="$1" 2>/dev/null | tail -n 1)
 }
 
-function _run_tests() {
-    sed -i 's/#\[ignore\]$//g' tests/*.rs \
-        && cargo +nightly test --all-features
-}
+function _src_track() {
+    local script="$_dir/tracks/$(_config_get track).sh"
 
-function _run_benches() {
-    local bench_loc="$_dir/benches/$(_config_get exercise).rs"
-
-    if [[ -f "$bench_loc" ]]; then
-        mkdir -p "./benches" \
-            && cp "$bench_loc" './benches/custom.rs' \
-            && cargo +nightly bench --all-features
+    if [[ -f "$script" ]]; then
+        source "$script"
     else
-        echo "Unknown custom bench: $bench_loc"
+        echo "Unknown track script file: $script"
         return 1
     fi
 }
@@ -125,16 +118,17 @@ function xr() {
 
                 case "$1" in
                     "test")
-                        _run_tests
+                        _src_track && _run_tests
                     ;;
                     "bench")
-                        _run_benches
+                        _src_track && _run_benches
                     ;;
                 esac
             ;;
             *)
                 if _is_uuid "$1"; then
                     _dl_exo "$1" \
+                        && _src_track \
                         && _run_tests
                 else
                     echo "Unsupported command: $1"

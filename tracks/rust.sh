@@ -4,7 +4,7 @@ function _run_tests() {
 }
 
 function _run_benches() {
-    local bench_loc="$_dir/benches/$(_config_get exercise).rs"
+    local bench_loc="$_dir/benches/rust/$(_config_get exercise).rs"
 
     if [[ -f "$bench_loc" ]]; then
         mkdir -p "./benches" \

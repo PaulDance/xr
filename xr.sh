@@ -89,7 +89,7 @@ function xr() {
                 if [[ "$#" == "2" ]]; then
                     note="$note/$2.md"
                 else
-                    note="$note/$(_config_get exercise).md"
+                    note="$note/$(_config_get track)/$(_config_get exercise).md"
                 fi
 
                 if [[ "$1" == "notes" ]]; then

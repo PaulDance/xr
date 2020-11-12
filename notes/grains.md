@@ -2,12 +2,14 @@ Congratulations on passing all the tests!
 
 I benchmarked this solution. It was among the fastest.
 
-This solution
+This solution:
+
 ```rust
 test test_returns_the_total_number_of_grains_on_the_board ... bench:           0 ns/iter (+/- 0)
 ```
 
-Here is another 0 nanosecond solution which uses less ceremony
+Here is another 0 nanosecond solution which uses less ceremony:
+
 ```rust
 pub fn square(s: u32) -> u64 {
     if (s < 1) | (s > 64) {
@@ -21,7 +23,8 @@ pub fn total() -> u64 {
 }
 ```
 
-Other solution benchmarks
+Other solution benchmarks:
+
 ```rust
 test test_returns_the_total_number_of_grains_on_the_board ... bench:           0 ns/iter (+/- 0)
 test test_returns_the_total_number_of_grains_on_the_board ... bench:         224 ns/iter (+/- 32)

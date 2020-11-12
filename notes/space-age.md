@@ -1,6 +1,6 @@
 Congratulations on passing all the tests!
 
-- I like the use of a constant.
+ * I like the use of a constant.
 
 Another approach to consider is how the use of a macro could reduce the
 boilerplate for this exercise. For instance, [a macro can implement a trait for

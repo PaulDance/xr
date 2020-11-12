@@ -1,22 +1,21 @@
 Congratulations on passing all the tests!
 
-- I like this solution is succinct and readable, with almost-always informative
-  names for the bindings.
-- I like that you derive the `PartialEq` on `DNA` and `RNA` instead if
-  implementing it manually.
+ * I like this solution is succinct and readable, with almost-always
+   informative names for the bindings.
+ * I like that you derive the `PartialEq` on `DNA` and `RNA` instead if
+   implementing it manually.
 
 One thing I noticed was:
 
-```
+```rust
 #[derive(Debug, PartialEq)]
 pub struct DNA(String);
 ```
 
 which leaves referring to the struct field as if it were a tuple, for example:
 
-```
+```rust
 RNA(self.0.chars()...
-
 ```
 
 which makes it less informative, as if it were a magic number, when it doesn't
@@ -26,7 +25,7 @@ Something to consider is that the logic needed to create correct values in the
 `new` methods would be bypassed if someone were to create DNA or RNA as a struct
 literal, for example:
 
-```
+```rust
 let my_DNA = DNA {0: "ACGT"};
 ```
 

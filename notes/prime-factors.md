@@ -1,6 +1,6 @@
 Congratulations on passing all the tests!
 
-I like this solution is succinct and readable.
+ * I like this solution is succinct and readable.
 
 I benchmarked this solution and it is toward the low end of what I've seen so far..
 This solution:

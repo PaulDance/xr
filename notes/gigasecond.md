@@ -1,11 +1,10 @@
 Congratulations on passing all the tests!
 
-- I like the large numeric is formatted with underscores to be more readable.
-
-- I like this solution directly adds `Duration` to `start` with the `+` operator.
-
-- I like the expression is directly returned instead of being set to a binding
-  and returning the binding or using `return` and a semicolon.
+ * I like the large numeric is formatted with underscores to be more readable.
+ * I like this solution directly adds `Duration` to `start` with the `+`
+   operator.
+ * I like the expression is directly returned instead of being set to a binding
+   and returning the binding or using `return` and a semicolon.
 
 A minor style point is that usually `rustfmt`  will usually put `use` elements
 in alphabetical order. In larger programs with a lot of `use` statements it can

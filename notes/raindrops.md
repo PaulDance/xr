@@ -13,7 +13,7 @@ are other ways that a `match` on a `tuple` could work, for example...
 pub fn raindrops(n: u32) -> String {
     let output = match (n % 3 == 0, n % 5 == 0, n % 7 == 0) {
         (true, false, false) => "Pling",
-//and so on
+        // and so on
 ```
 
 Viewing the community solutions may offer other approaches to this exercise 
@@ -37,9 +37,7 @@ won't make a String out of &String. You can see that `flatten` creates a
 reference in the first `flatten` example of two vectors being flattened into a
 reference to one vector.
 
-```
-Basic usage:
-
+```rust
 let data = vec![vec![1, 2, 3, 4], vec![5, 6]];
 let flattened = data.into_iter().flatten().collect::<Vec<u8>>();
 assert_eq!(flattened, &[1, 2, 3, 4, 5, 6]);
@@ -61,7 +59,7 @@ ceremony/verbosity than needed.
 I think you're very close to a succinct and readable solution with the array of
 tuples approach. I think it can be simplified to
 
-```
+```rust
 [(3, "Pling"), (5, "Plang"), (7, "Plong")]
 ```
 

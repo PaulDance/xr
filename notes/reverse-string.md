@@ -1,10 +1,10 @@
 Congratulations on passing all the tests, including the bonus test!
 
-- I like the use of `unicode-segmentation`
+ * I like the use of `unicode-segmentation`
 
-This can also be...
+This can also be:
+
 ```rust
-
 use unicode_segmentation::UnicodeSegmentation;
 
 pub fn reverse(input: &str) -> String {

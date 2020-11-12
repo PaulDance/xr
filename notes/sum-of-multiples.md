@@ -1,7 +1,7 @@
 Congratulations on passing all the tests!
 
-- I like the use of `checked_rem` in a match expression, although it is not
-  strictly necessary.
+ * I like the use of `checked_rem` in a match expression, although it is not
+   strictly necessary.
 
 I bench-tested using the arguments for
 `solutions_using_include_exclude_must_extend_to_cardinality_greater_than_3` and

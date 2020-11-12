@@ -1,14 +1,11 @@
 Congratulations on passing all the tests!
 
-- I like the use of constants.
-
-- I like that `PartialEq` was derived instead of implementing it manually.
-
-- I like the use of `{:02}:{:02}` instead of calculating the leading zero manually.
-
-- I like the use of `rem_euclid`.
-
-- I like that Clock only stores minutes.
+ * I like the use of constants.
+ * I like that `PartialEq` was derived instead of implementing it manually.
+ * I like the use of `{:02}:{:02}` instead of calculating the leading zero
+   manually.
+ * I like the use of `rem_euclid`.
+ * I like that Clock only stores minutes.
 
 Something to consider is how the logic may possibly be simplified by storing
 only minutes in the Clock struct.

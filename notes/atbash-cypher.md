@@ -1,19 +1,15 @@
 Congratulations on passing all the tests!
 
-- I like this solution uses iterators.
-
-- I like this solution uses a macro and includes a test for it.
-
-- I like this approach uses iterators and match expressions.
-
-- I like this approach uses an `reverse` function instead of doing comparisons
-  with collections such as a HashMap, Vector of tuples, or arrays.
-
-- I like the use of constants.
+ * I like this solution uses iterators.
+ * I like this solution uses a macro and includes a test for it.
+ * I like this approach uses iterators and match expressions.
+ * I like this approach uses an `reverse` function instead of doing comparisons
+   with collections such as a HashMap, Vector of tuples, or arrays.
+ * I like the use of constants.
 
 A quibble is that instead of always adding 1 here
 
-```
+```rust
 (elem as u8 - A_ASCII) as i32 + 1)
 ```
 

@@ -1,6 +1,6 @@
 Congratulations on passing all the tests!
 
-- I like that this solution is succinct and readable.
+ * I like that this solution is succinct and readable.
 
 FYI, I benchmarked `test_big_prime` and got a quite respectable result. Most
 I've seen are usually ~100 milliseconds. Some have been ~7 milliseconds and

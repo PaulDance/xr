@@ -1,6 +1,6 @@
 Congratulations on passing all the tests!
 
-- I like the match on a tuple
+ * I like the match on a tuple.
 
 As formattted, it may be a bit less readable than a maintainer would like to
 come back to in a few months to modify.

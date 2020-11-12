@@ -1,23 +1,16 @@
 Congratulations on passing all the tests!
 
-- I like the use of enums.
-
-- I like the code is broken up into functions instead of being one big blob.
-
-- I like the use of the `'a` lifetime specifier and that it was not sprinkled everywhere.
-
-- I like the derivations of `PartialEq` and `PartialOrd` etc. instead of
-  manually implementing them.
-
-- I like the use of custom tests.
-
-- I like the creation and use of a macro.
-
-- I like the comments.
-
-- I like this solution demonstrates a familiarity with itertools.
-
-- I like the familiarity with `unreachable!`
+ * I like the use of enums.
+ * I like the code is broken up into functions instead of being one big blob.
+ * I like the use of the `'a` lifetime specifier and that it was not sprinkled
+   everywhere.
+ * I like the derivations of `PartialEq` and `PartialOrd` etc. instead of
+   manually implementing them.
+ * I like the use of custom tests.
+ * I like the creation and use of a macro.
+ * I like the comments.
+ * I like this solution demonstrates a familiarity with itertools.
+ * I like the familiarity with `unreachable!`
 
 As a style issue, perhaps some of the `if` expressions could be `match`
 expressions, but that's just a quibble.

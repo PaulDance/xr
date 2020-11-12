@@ -6,7 +6,6 @@ This solution:
 
 ```rust
 test identify_all_saddle_points ... bench:       1,559 ns/iter (+/- 87)
-
 ```
 
 Elsewhere:

@@ -10,26 +10,31 @@ I benchmarked a few solutions. The results for this solution were slower than
 expected.
 
 This solution:
+
 ```rust
 test test_multiple_anagrams ... bench:      10,408 ns/iter (+/- 1,640)
 ```
 
 A solution using sort and HashSet:
+
 ```rust
 test test_multiple_anagrams ... bench:       3,025 ns/iter (+/- 283)
 ```
 
 A solution using sort without HashMap:
+
 ```rust
 test test_multiple_anagrams ... bench:       3,296 ns/iter (+/- 216)
 ```
 
 A solution using unicase and lexical-sort with a HashSet:
+
 ```rust
 test test_multiple_anagrams ... bench:       7,256 ns/iter (+/- 547)
 ```
 
 A solution using no sort with a HashMap in a fold:
+
 ```rust
 test test_multiple_anagrams ... bench:       5,680 ns/iter (+/- 290)
 ```

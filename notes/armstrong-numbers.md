@@ -1,6 +1,6 @@
 Congratulations on passing all the tests!
 
-- I like this solution uses `div_euclid`.
+ * I like this solution uses `div_euclid`.
 
 I don't benchmark this exercise, but this solution seems to be performant.
 

@@ -11,24 +11,24 @@ extern crate test;
 use test::Bencher;
 ```
 
-- For the test you want to benchmark, replace #[test] with #[bench]. 
-- If the test is marked #[ignore], delete #[ignore]
-- Pass in the variable `b: &mut Bencher`.
-- Modify the line calling `assert!` to call the function in a closure inside a
-  call to b.iter().
-- I use rust analyzer in Vim, VSCode or CLion, which gives me a couple links to
-  run the benchmark or to run the code in Debug.
-- Example below is from Sublist:
+ * For the test you want to benchmark, replace #[test] with #[bench]. 
+ * If the test is marked #[ignore], delete #[ignore]
+ * Pass in the variable `b: &mut Bencher`.
+ * Modify the line calling `assert!` to call the function in a closure inside a
+   call to b.iter().
+ * I use rust analyzer in Vim, VSCode or CLion, which gives me a couple links to
+   run the benchmark or to run the code in Debug.
+ * Example below is from Sublist:
 
-```rust
-#[bench]
-fn huge_sublist_not_in_huge_list(b: &mut Bencher) {
-    let v1: Vec<u64> = (10..1_000_001).collect();
-    let v2: Vec<u64> = (1..1_000_000).collect();
-
-    b.iter(|| sublist(&v1, &v2));
-}
-```
+   ```rust
+   #[bench]
+   fn huge_sublist_not_in_huge_list(b: &mut Bencher) {
+       let v1: Vec<u64> = (10..1_000_001).collect();
+       let v2: Vec<u64> = (1..1_000_000).collect();
+   
+       b.iter(|| sublist(&v1, &v2));
+   }
+   ```
 
 Finally compile and run the benchmarks using `cargo +nightly bench`.
 

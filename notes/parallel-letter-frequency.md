@@ -1,10 +1,8 @@
 Congratulations on passing all the tests!
 
-- I like this solution uses the std library
-
-- I like the code is succinct and readable.
-
-- I like that it is well-commented.
+ * I like this solution uses the std library
+ * I like the code is succinct and readable.
+ * I like that it is well-commented.
 
 There is a limitation around threads: they were previously scoped, i.e. could
 infer data was only used inside a certain context, but they now enforce a

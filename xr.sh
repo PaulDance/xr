@@ -18,7 +18,7 @@ Usage: xr [<command>] [<uuid>]
 
 Arguments:
     command Optional subcommand, see below; when ommitted, defaults to 'test'.
-    uuid    Unique identifier for a submission: $_uuid_len-digit hex value.
+    uuid    Unique identifier for a submission: a $_uuid_len-digit hex value.
             If a UUID is given, whatever the command used except for 'help',
             first the corresponding exercise is downloaded using \`exercism\`
             and the shell's current directory is changed to the returned value,
@@ -30,16 +30,19 @@ Commands:
             filesystem using \`exercism\` in order to determine their location.
     notes   Dump the contents of the mentoring notes for the current exercise
             to the standard output, as deduced by reading the exercise config,
-            or from an exercise or topic of your choice through a second argument.
+            or from an exercise or topic of your choice through a second argument,
+            but in this case it must be explicitly prefixed with the track name
+            like so for example: \`xr notes rust/anagram\`.
     edit    Open the mentoring notes for the current exercise in the editor
             specified by the EDITOR environment variable, as deduced by reading
             the exercise's configuration, or from an exercise or topic of your
-            choice through a second argument.
-    test    Activate all unit tests available by modifying files and run them
-            with all features activated in nightly environment. This is the
-            default command when not specifying one but still giving a UUID.
-    bench   Force copy custom benchmarks from the database into the 'benches'
-            directory of the exercise and run them in nightly environment.
+            choice through a second argument with the same rules as 'notes'.
+    test    Source the current track's script functions and run the unit tests
+            of the local exercise according to the dedicated function. This is
+            the default command when not specifying one but still giving a UUID.
+    bench   Source the current track's script functions and run the benchmarks
+            of the local exercise according to the dedicated function. It is
+            usually copying a file to its correct place and call the bencher.
             The path of the file to copy is deduced from the exercise's local
             \`$_exo_config\` configuration file.
 EOF

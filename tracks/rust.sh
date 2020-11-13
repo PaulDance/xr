@@ -1,7 +1,6 @@
-# Hard-activates and runs all the available tests.
+# Runs all the available tests, including disabled ones.
 function _run_tests() {
-    sed -i 's/#\[ignore\]$//g' tests/*.rs \
-        && cargo +nightly test --all-features
+    cargo +nightly test --all-features -- -Z unstable-options --include-ignored
 }
 
 # Copies the stored benchmarks into the dedicated sub-directory and runs them.

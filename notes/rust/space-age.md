@@ -2,6 +2,15 @@ Congratulations on passing all the tests!
 
  * I like the use of a constant.
 
+One thing you could do is to define an associated constant in the `Planet`
+trait and provide a default implementation for `years_during`, which would help
+you avoid all the re-implementions of `years_during` for every planet, as they
+are very similar. The edition guide has a section about [trait associated
+constants](https://doc.rust-lang.org/nightly/edition-guide/rust-2018/trait-system/associated-constants.html)
+and the book about [default
+implementations](https://doc.rust-lang.org/book/ch10-02-traits.html#default-implementations)
+which you should take a look at.
+
 Another approach to consider is how the use of a macro could reduce the
 boilerplate for this exercise. For instance, [a macro can implement a trait for
 multiple types at

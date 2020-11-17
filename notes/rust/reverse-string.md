@@ -2,6 +2,16 @@ Congratulations on passing all the tests, including the bonus test!
 
  * I like the use of `unicode-segmentation`
 
+You are already using an iterator when calling `input.chars().rev()`, so you
+should know that iterators can be collected to, well, collections using the
+`collect` method. So this can simply be:
+
+```rust
+pub fn reverse(input: &str) -> String {
+    input.chars().rev().collect()
+}
+```
+
 This can also be:
 
 ```rust

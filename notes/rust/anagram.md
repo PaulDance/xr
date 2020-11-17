@@ -1,7 +1,7 @@
 Congratulations on passing all the tests!
 
 It is fine to solve this with the std library. In the event you ever find case
-changes to be inadequate for some unicode sorts or comparisions, you may also
+changes to be inadequate for some Unicode sorts or comparisons, you may also
 want to check out the [unicase](https://crates.io/crates/unicase) and
 [lexical-sort](https://crates.io/crates/lexical-sort) crates. Or the
 [unicode-segmentation](https://crates.io/crates/unicode-segmentation) crate.

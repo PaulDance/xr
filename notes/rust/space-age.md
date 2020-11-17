@@ -2,6 +2,11 @@ Congratulations on passing all the tests!
 
  * I like the use of a constant.
 
+In case you would like to only define a function or method required to be
+implemented in a trait, then you should terminate the definition with a
+semi-colon instead of leaving the default implementation that calls
+`unimplemented!`, which is basically a more specific version of `panic!`.
+
 One thing you could do is to define an associated constant in the `Planet`
 trait and provide a default implementation for `years_during`, which would help
 you avoid all the re-implementions of `years_during` for every planet, as they

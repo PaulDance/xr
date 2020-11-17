@@ -10,6 +10,12 @@ A minor style point is that usually `rustfmt`  will usually put `use` elements
 in alphabetical order. In larger programs with a lot of `use` statements it can
 be helpful to have them ordered alphabetically.
 
+You don't need to use the `checked_add_signed` method of `DateTime<Utc>` since
+you have to `unwrap` its output `Option` value anyway. What you can do instead
+is to use the `Add` implementation for `DateTime<Utc>`, meaning `+` can be
+directly used between `start` and `Duration::seconds(1_000_000_000)` in order
+to get the desired return value.
+
 Some coders may prefer to create a `const` with the gigasecond value and use
 that in `after`. I could see doing that if the value were used in multiple
 places, but since it's only used in one place in this short program I don't

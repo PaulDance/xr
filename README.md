@@ -22,7 +22,7 @@ uses core utilities expected on any GNU operating system, such as `cp`, `grep`,
 
 ## Installation
 
- * If you are using Zsh with a plugin manager similar ito OhMyZsh, then you can
+ * If you are using Zsh with a plugin manager similar to OhMyZsh, then you can
    simply clone this repository in the directory dedicated to custom plugins,
    usually: `~/.oh-my-zsh/custom/plugins` and then add this plugin's name to
    the `plugins` array in your shell's main configuration file, like `~/.zshrc`

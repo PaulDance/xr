@@ -17,3 +17,9 @@ test test_difference_range     ... bench:      21,937 ns/iter (+/- 826)
 test test_square_of_sum_range  ... bench:      13,693 ns/iter (+/- 957)
 test test_sum_of_squares_range ... bench:      16,999 ns/iter (+/- 625)
 ```
+
+Your solution:
+
+```rust
+
+```

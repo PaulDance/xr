@@ -1,10 +1,10 @@
 # XR: The Exercism Runner
 
 This repository provides a shell plugin one can use in order to speed up
-repetitive but necessary steps when reviewing submissions as an @exercism
-mentor, such as: download the latest iteration of a student, compile and run
-the tests, import and run a custom set of benchmarks, view mentoring notes,
-etc...
+repetitive but necessary steps when reviewing submissions as an
+[@exercism](https://github.com/exercism) mentor, such as: download the latest
+iteration of a student, compile and run the tests, import and run a custom set
+of benchmarks, view mentoring notes, etc...
 
 ## Environments supported
 

@@ -5,8 +5,8 @@ Congratulations on passing all the tests!
  * I like the use of `{:02}:{:02}` instead of calculating the leading zero
    manually.
  * I like the use of `rem_euclid`.
-  * I like that `Clock::new` is re-used in `Clock::add_minutes` without much
-    prior transformations.
+ * I like that `Clock::new` is re-used in `Clock::add_minutes` without much
+   prior transformations.
  * I like that Clock only stores minutes.
 
 Something to consider is how the logic may possibly be simplified by storing

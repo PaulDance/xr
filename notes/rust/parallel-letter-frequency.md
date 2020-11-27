@@ -22,9 +22,21 @@ with parallel in the 300 microseconds. In all other benchmarks the sequential
 is usually faster than the parallel. Older versions of Rust usually were in the
 900 microseconds for sequential.
 
+@njutte's solution using the std library only with a custom thread pool:
+
 ```rust
-test bench_large_parallel   ... bench:     376,536 ns/iter (+/- 228,650)
-test bench_large_sequential ... bench:     761,475 ns/iter (+/- 37,847)
+test bench_large_parallel   ... bench:     207,273 ns/iter (+/- 40,436)
+test bench_large_sequential ... bench:     791,554 ns/iter (+/- 115,804)
+test bench_small_parallel   ... bench:      10,939 ns/iter (+/- 1,696)
+test bench_small_sequential ... bench:      27,337 ns/iter (+/- 4,242)
+test bench_tiny_parallel    ... bench:          76 ns/iter (+/- 14)
+test bench_tiny_sequential  ... bench:          70 ns/iter (+/- 13)
+```
+
+Your solution:
+
+```rust
+
 ```
 
 The use of channels is actually not necessary here: a thread may return a

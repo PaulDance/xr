@@ -9,17 +9,17 @@ Your solution is indeed a bit slow. I ran a few benchmarks based on the
 @insideoutclub's solution using iterators only:
 
 ```rust
-test large_board ... bench:       1,005 ns/iter (+/- 72)
+test large_board ... bench:         919 ns/iter (+/- 65)
 ```
 
 My solution using iterators and manual listing with ugly conversions:
 
 ```rust
-test large_board ... bench:       2,694 ns/iter (+/- 124)
+test large_board ... bench:       2,456 ns/iter (+/- 136)
 ```
 
 Your solution:
 
 ```rust
-test large_board ... bench:       5,566 ns/iter (+/- 313)
+
 ```

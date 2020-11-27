@@ -33,6 +33,17 @@ test bench_tiny_parallel    ... bench:          76 ns/iter (+/- 14)
 test bench_tiny_sequential  ... bench:          70 ns/iter (+/- 13)
 ```
 
+@BryanMorgan's solution using `crossbeam::scope`:
+
+```rust
+test bench_large_parallel   ... bench:     180,057 ns/iter (+/- 6,171)
+test bench_large_sequential ... bench:     791,921 ns/iter (+/- 38,868)
+test bench_small_parallel   ... bench:      13,054 ns/iter (+/- 906)
+test bench_small_sequential ... bench:      26,704 ns/iter (+/- 1,906)
+test bench_tiny_parallel    ... bench:          50 ns/iter (+/- 0)
+test bench_tiny_sequential  ... bench:          70 ns/iter (+/- 1)
+```
+
 Your solution:
 
 ```rust

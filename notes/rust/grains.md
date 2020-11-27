@@ -5,7 +5,7 @@ I benchmarked this solution. It was among the fastest.
 This solution:
 
 ```rust
-test test_returns_the_total_number_of_grains_on_the_board ... bench:           0 ns/iter (+/- 0)
+
 ```
 
 Here is another 0 nanosecond solution which uses less ceremony:
@@ -26,7 +26,7 @@ pub fn total() -> u64 {
 Other solution benchmarks:
 
 ```rust
-test test_returns_the_total_number_of_grains_on_the_board ... bench:           0 ns/iter (+/- 0)
+test test_returns_the_total_number_of_grains_on_the_board ... bench:           1 ns/iter (+/- 0)
 test test_returns_the_total_number_of_grains_on_the_board ... bench:         224 ns/iter (+/- 32)
 test test_returns_the_total_number_of_grains_on_the_board ... bench:         466 ns/iter (+/- 23)
 test test_returns_the_total_number_of_grains_on_the_board ... bench:         466 ns/iter (+/- 25)

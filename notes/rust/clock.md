@@ -39,7 +39,11 @@ There is an article on [struct literals and
 constructors](https://steveklabnik.com/writing/structure-literals-vs-constructors-in-rust)
 that explains how to prevent initialization by a struct literal. The struct
 literal concerns are not specifically related to this exercise but are to be
-considered when using structs in your own projects.
+considered when using structs in your own projects. As the author writes: "To me, 
+understanding things like this is when I really start to feel like I’m getting to know a
+language: putting three or four disparate concepts together to achieve some goal. 
+It’s when a language stops being a bunch of disjoint parts and starts becoming a cohesive 
+whole."
 
 I've gone ahead and added the `num-integer` dependency, but in the future, when
 using an external crate, please include your `Cargo.toml` file with your

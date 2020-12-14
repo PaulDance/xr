@@ -9,8 +9,12 @@ Congratulations on passing all the tests!
    prior transformations.
  * I like that Clock only stores minutes.
 
-Something to consider is how the logic may possibly be simplified by storing
-only minutes in the Clock struct.
+Something to consider is how the logic for calculation may possibly be 
+simplified by storing only minutes in the Clock struct. That would leave 
+[separating the concern](https://en.wikipedia.org/wiki/Separation_of_concerns)
+of hours and minutes only for `Display`, which is the only place that cares 
+about it.
+
 
 Instead of manually implementing `PartialEq`, it can be derived in an attribute.
 This poses no problems for the Clock struct since all of its fields are

@@ -56,9 +56,9 @@ overview of its capacities.
 ## Contributing
 
 Any form of contribution is always welcome! The current state of the plugin
-restricts a bit the possibilities though: it is rather young, so a lot of
-functionalities may be added, changed or removed in the coming weeks. However,
-there is definitely room for contribution concerning mentoring notes and custom
+restricts a bit the possibilities though: it is not finalized yet, so a lot of
+functionalities may be added, changed or removed over time. However, there is
+definitely room for contribution concerning mentoring notes and custom
 benchmarks, as they were initially kindly provided by
 [@bobahop](https://github.com/bobahop), but originated from personal notes
 accumulated over the months and have been dusted and reorganized since. In any

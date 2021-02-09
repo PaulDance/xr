@@ -12,7 +12,7 @@ function _run_benches() {
             && cp "$bench_loc" './benches/custom.rs' \
             && cargo +nightly bench --all-features
     else
-        echo "Unknown custom bench: $bench_loc"
+        echo "Unknown custom bench: $bench_loc" >&2
         return 1
     fi
 }

@@ -69,7 +69,7 @@ function _src_track() {
     if [[ -f "$script" ]]; then
         source "$script"
     else
-        echo "Unknown track script file: $script"
+        echo "Unknown track script file: $script" >&2
         return 1
     fi
 }
@@ -82,7 +82,7 @@ function _is_uuid() {
 # Public function.
 function xr() {
     if [[ "$#" == "0" || "$#" -gt "2" ]]; then
-        echo "$_short_doc"
+        echo "$_short_doc" >&2
         return 1
     else
         case "$1" in
@@ -107,13 +107,13 @@ function xr() {
                     if [[ -f "$note" ]]; then
                         cat "$note"
                     else
-                        echo "Unknown exercise or topic note: $note"
+                        echo "Unknown exercise or topic note: $note" >&2
                         return 1
                     fi
                 elif [[ "$(basename $note)" != ".md" ]]; then
                     $EDITOR "$note"
                 else
-                    echo "Current directory is not an exercise."
+                    echo "Current directory is not an exercise." >&2
                     return 1
                 fi
             ;;
@@ -122,7 +122,7 @@ function xr() {
                     if _is_uuid "$2"; then
                         _dl_exo "$2"
                     else
-                        echo "Invalid UUID: $2"
+                        echo "Invalid UUID: $2" >&2
                         return 1
                     fi
                 fi
@@ -142,7 +142,7 @@ function xr() {
                         && _src_track \
                         && _run_tests
                 else
-                    echo "Unsupported command: $1"
+                    echo "Unsupported command: $1" >&2
                     return 1
                 fi
             ;;

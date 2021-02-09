@@ -19,11 +19,11 @@ Usage: xr [<command>] [<uuid>]
 
 Arguments:
     command   Optional subcommand, see below; when ommitted, defaults to 'test'.
-    uuid      Unique identifier for a submission: a $_uuid_len-digit hex value.
-              If a UUID is given, whatever the command used except for 'help',
-              first the corresponding exercise is downloaded using \`exercism\`
-              and the shell's current directory is changed to the returned
-              value, then the command's actual operation is executed.
+    uuid      Unique identifier for a submission: a 32-digit hex value. If a
+              UUID is given, whatever the command used except for 'help', first
+              the corresponding exercise is downloaded using \`exercism\` and
+              the shell's current directory is changed to the returned value,
+              then the command's actual operation is executed.
 
 Commands:
     h, help   Display this message.

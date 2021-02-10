@@ -21,6 +21,7 @@ function _gradle_or_gradlew() {
     # if gradlew found, run it instead of gradle
     if [[ -f "$project_root/gradlew" ]]; then
         echo "executing gradlew instead of gradle"
+        chmod u+x "$project_root/gradlew"
         "$project_root/gradlew" "$@"
     else
         command gradle "$@"

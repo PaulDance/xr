@@ -30,12 +30,13 @@ function _gradle_or_gradlew() {
 
 # Force-activates and runs all the available tests.
 function _run_tests() {
-    sed -Ei 's/.*@(Ignore|Disabled).*//g' src/test/java/*.java \
+    sed -Ei 's/.*@(Ignore|Disabled).*//g' \
+            src/test/$(_config_get track)/*.(java|kt|groovy) \
         && _gradle_or_gradlew test
 }
 
 # N/A.
 function _run_benches() {
-    echo "The Java track does not support benchmarks." >&2
+    echo "This JVM+Gradle-based track does not support benchmarks." >&2
     return 1
 }

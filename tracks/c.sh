@@ -1,4 +1,4 @@
-# Runs all the available tests.
+# Force-activates and runs all the available tests.
 function _run_tests() {
     sed -Ei 's/\s*TEST_IGNORE\(\);.*//g' test/test_*.c \
         && make -j test \

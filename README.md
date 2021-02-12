@@ -39,9 +39,9 @@ uses core utilities expected on any GNU operating system, such as `cp`, `grep`,
     [dedicated plugin](https://github.com/TamCore/autoupdate-oh-my-zsh-plugins).
 
  * If you only have Bash or a Bash-like shell without an equivalent plugin
-   manager, then you have to clone this repository *somewhere* on your
-   filesystem that is convenient for you and then add the following line to
-   your shell's main configuration file, like `~/.bashrc` for Bash:
+   manager, then you have to clone this repository *somewhere* on your file
+   system that is convenient for you and then add the following line to your
+   shell's main configuration file, like `~/.bashrc` for Bash:
 
    ```bash
    source <path-to-repo>/xr.sh
@@ -50,7 +50,7 @@ uses core utilities expected on any GNU operating system, such as `cp`, `grep`,
 ## Usage
 
 Once the plugin successfully sourced, one can then start to use the provided
-`xr` shell function. Type `xr help` to get started with a more detailled
+`xr` shell function. Type `xr help` to get started with a more detailed
 overview of its capacities.
 
 ## Contributing

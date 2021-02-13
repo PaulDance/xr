@@ -16,9 +16,11 @@ supports the expected environment when mentoring on the **Rust** track.
 This tool is a shell plugin: a collection of shell constructs one will `source`
 in order to retrieve them. The shell itself must be **Bash-compatible**, like
 Bash obviously but Zsh as well for example. Then there are the programs and
-libraries required by the track you are mentoring for. Other than that, it only
-uses core utilities expected on any GNU operating system, such as `cp`, `grep`,
-`cut`...
+libraries required by the track you are mentoring for, in particular the
+`exercism` CLI itself. Other than that, it only uses core utilities expected on
+any GNU operating system, such as `cp`, `grep`, `sed`, `cut`, `rm`... and a
+text editor available from the shell and set as the value of the `$EDITOR`
+environment variable if you wish to use the `xr edit` functionality.
 
 ## Installation
 

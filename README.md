@@ -6,10 +6,32 @@ repetitive but necessary steps when reviewing submissions as an
 iteration of a student, compile and run the tests, import and run a custom set
 of benchmarks, view mentoring notes, etc...
 
-## Environments supported
+## Supported tracks
 
-The plugin is still in early development stages, so as of writing this, it only
-supports the expected environment when mentoring on the **Rust** track.
+The plugin currently supports a good amount of track environments, at least
+when considering unit testing automation:
+
+ * Bash: tests only.
+ * C: tests only.
+ * C++: tests only.
+ * C#: tests only.
+ * F#: tests only.
+ * Go: tests and partial benchmarks (just running, no importing).
+ * Groovy: tests only.
+ * Haskell: tests and partial benchmarks.
+ * Java: tests only.
+ * JavaScript: tests only.
+ * Kotlin: tests only.
+ * Perl5: tests only.
+ * PHP: tests only.
+ * Python: tests only.
+ * Ruby: tests only.
+ * Rust: tests and full benchmarks.
+ * Scala: tests only.
+ * TypeScript: tests only.
+
+If you would like to see a new track supported or an already-existing one
+improved, take a look at the [contributing guidelines](CONTRIBUTING.md).
 
 ## Requirements
 

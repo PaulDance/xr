@@ -218,3 +218,12 @@ Rust's Beer Song are available in the `notes/rust/beer-song.md` file, or the
 topic about `rustfmt` is covered in `notes/rust/rustfmt.md`. One chooses the
 topic names however one wants obviously, but it must follow the "kebab-case"
 naming convention like track or exercise slugs.
+
+Writing notes is not that complicated either: one should aim at covering the
+most frequent remarks one does when mentoring, so that one may copy-paste from
+these as much as possible to speed up their mentoring process. They can be
+positive points noting the submission's quality regarding certain aspects,
+usually presented in lists, or suggestions on how it could be improved, often
+in separate paragraphs. One should respect the various Markdown formatting
+conventions and also hard-wrap all lines at 80 characters: editors usually help
+in this regard.

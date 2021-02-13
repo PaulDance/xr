@@ -77,6 +77,21 @@ Once the plugin successfully sourced, one can then start to use the provided
 `xr` shell function. Type `xr help` to get started with a more detailed
 overview of its capacities.
 
+The usual workflow is as such:
+
+ * Run `xr <uuid>` where `<uuid>` is a given submission's identificator as
+   listed on the iteration page. This will: download the submission, go to its
+   directory, potentially force-activate, compile and run all the available
+   unit tests.
+ * If you wish you may then run the tests again using `xr test`.
+ * Run `xr bench` to automatically import, compile and run benchmarks if they
+   exist for the current track and exercise.
+ * Run `xr notes` to display the mentoring notes for the current exercise.
+ * Run `xr edit` in order to open the mentoring notes for the current exercise
+   using the configured text editor.
+ * When done for the day, you may run `xr clean` in order to remove all
+   downloaded exercise submissions.
+
 ## Contributing
 
 See the [contributing guidelines](CONTRIBUTING.md).

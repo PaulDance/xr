@@ -6,6 +6,7 @@ repetitive but necessary steps when reviewing submissions as an
 iteration of a student, compile and run the tests, import and run a custom set
 of benchmarks, view mentoring notes, etc...
 
+
 ## Supported tracks
 
 The plugin currently supports a good amount of track environments, at least
@@ -33,6 +34,7 @@ when considering unit testing automation:
 If you would like to see a new track supported or an already-existing one
 improved, take a look at the [contributing guidelines](CONTRIBUTING.md).
 
+
 ## Requirements
 
 This tool is a shell plugin: a collection of shell constructs one will `source`
@@ -43,6 +45,7 @@ libraries required by the track you are mentoring for, in particular the
 any GNU operating system, such as `cp`, `grep`, `sed`, `cut`, `rm`... and a
 text editor available from the shell and set as the value of the `$EDITOR`
 environment variable if you wish to use the `xr edit` functionality.
+
 
 ## Installation
 
@@ -71,6 +74,7 @@ environment variable if you wish to use the `xr edit` functionality.
    source <path-to-repo>/xr.sh
    ```
 
+
 ## Usage
 
 Once the plugin successfully sourced, one can then start to use the provided
@@ -91,6 +95,7 @@ The usual workflow is as such:
    using the configured text editor.
  * When done for the day, you may run `xr clean` in order to remove all
    downloaded exercise submissions.
+
 
 ## Contributing
 

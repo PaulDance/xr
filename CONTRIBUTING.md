@@ -159,6 +159,10 @@ or improved at a later date. In particular, there is no need to use `.gitkeep`
 conventional hacks in order to ensure the existence of some directories: things
 should fail gracefully.
 
+When done adding or improving a track script, one should also update the main
+`README.md`'s ["Supported tracks" section](README.md#supported-tracks) in order
+to reflect the achieved progress.
+
 
 ### Adding benchmarks
 

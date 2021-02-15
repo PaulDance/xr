@@ -3,8 +3,11 @@ Good job on passing the tests!
  * You show good use of iterators in `annotate`.
  * It's good that you use `char::from_digit` in order to avoid necessary
    additional heap allocation for just one character.
- * It is possible to simplify the mine counting by generating surrounding
-   positions using iterators instead of manually listing them.
+ * I like that you generate surrounding positions in instead of manually
+   listing them.
+
+It is possible to simplify the mine counting by generating surrounding
+positions using iterators instead of manually listing them.
 
 Consider implementing a `count_mines` function that returns the number of mines
 surrounding a given position of the field, either by manually listing or

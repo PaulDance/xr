@@ -76,7 +76,7 @@ function _src_track() {
 
 # Tests whether the given string is a valid UUID or not.
 function _is_uuid() {
-    [[ "$1" =~ '^[a-z0-9]{32}$' ]]
+    [[ "$1" =~ ^[[:xdigit:]]{32}$ ]]
 }
 
 # Public function.

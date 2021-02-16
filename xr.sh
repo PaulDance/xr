@@ -2,7 +2,17 @@
 
 # Constants.
 _exo_config=".exercism/metadata.json"
-_dir="$(dirname "$(readlink -f "$0")")"
+
+# Finding the location of the sourced script is shell-specific
+# Currently, zsh and bash are the only supported shells
+if [ -n "$ZSH_VERSION" ]; then
+    _dir="$(dirname "$(readlink -f "$0")")"
+elif [ -n "$BASH_VERSION" ]; then
+    _dir="$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")"
+else
+    echo "This is an unsupported shell." >&2
+    return 1
+fi
 
 read -r -d '' _short_doc << EOF
 Usage: xr [<command>] [<uuid>]

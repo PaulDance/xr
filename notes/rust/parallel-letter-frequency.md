@@ -1,6 +1,6 @@
 Congratulations on passing all the tests!
 
- * I like this solution uses the std library
+ * I like this solution uses the std library.
  * I like the code is succinct and readable.
  * I like that it is well-commented.
 
@@ -10,7 +10,7 @@ infer data was only used inside a certain context, but they now enforce a
 getting better performance, I suggest you take a look at some parallelization
 crates such as:
 
-It's good to get familiar with other crates like
+It's also good to get familiar with other crates like
 [threadpool](https://crates.io/crates/threadpool),
 [crossbeam-utils](https://crates.io/crates/crossbeam-utils),
 [rayon](https://crates.io/crates/rayon), or

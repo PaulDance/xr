@@ -12,7 +12,8 @@ positions using iterators instead of manually listing them.
 Consider implementing a `count_mines` function that returns the number of mines
 surrounding a given position of the field, either by manually listing or
 generating the neighboring positions, then you can simply apply it to the field
-using iterators with enumerates, maps and collects.
+using iterators with enumerates, maps and collects. Use `str::as_bytes` in
+order to get constant-time access to neighboring characters.
 
 Your solution is indeed a bit slow. I ran a few benchmarks based on the
 `large_board` unit test on my machine and got the following results:

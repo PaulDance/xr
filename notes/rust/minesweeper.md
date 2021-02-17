@@ -1,7 +1,7 @@
 Good job on passing the tests!
 
  * You show good use of iterators in `annotate`.
- * It's good that you use `char::from_digit` in order to avoid necessary
+ * It's good that you use `char::from_digit` in order to avoid unnecessary
    additional heap allocation for just one character.
  * I like that you generate surrounding positions instead of manually listing
    them.

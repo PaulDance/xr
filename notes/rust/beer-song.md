@@ -1,6 +1,7 @@
 Congratulations on passing all the tests!
 
  * I like this solution is readable.
+ * I like the use of `match` expressions.
  * I like the use of:
 
    ```rust

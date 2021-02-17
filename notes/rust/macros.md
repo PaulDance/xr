@@ -1,6 +1,7 @@
 Congratulations on passing all the tests!
 
  * I like this solution is well-commented.
+ * I like this solution covers all cases in one match arm.
  * I like that the logic cascades down. This is probably more readable than a
    more succinct but perhaps less readable solution, such as
 

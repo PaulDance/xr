@@ -1,6 +1,6 @@
-[This chapter](https://doc.rust-lang.org/1.7.0/book/benchmark-tests.html) in
+[This chapter](https://doc.rust-lang.org/1.7.0/book/benchmark-tests.html) of
 the Rust book describes how to benchmark. Here are the steps I took for setting
-up:
+it up:
 
 In a new file `benches/whatever.rs` paste the contents of a unit test you think
 its performance is worth measuring. Then at the top of the file:
@@ -16,7 +16,7 @@ use test::Bencher;
  * Pass in the variable `b: &mut Bencher`.
  * Modify the line calling `assert!` to call the function in a closure inside a
    call to b.iter().
- * I use rust analyzer in Vim, VSCode or CLion, which gives me a couple links to
+ * I use rust-analyzer in Vim, VSCode or CLion, which gives me a few links to
    run the benchmark or to run the code in Debug.
  * Example below is from Sublist:
 

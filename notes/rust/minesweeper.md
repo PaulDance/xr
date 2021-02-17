@@ -6,6 +6,10 @@ Good job on passing the tests!
  * I like that you generate surrounding positions instead of manually listing
    them.
 
+`char::from_digit` is available in order to simplify the conversion of an
+integer to a single character without manual byte handling or string
+intermediate storage which requires unnecessary additional allocation.
+
 It is possible to simplify the mine counting by generating surrounding
 positions using iterators instead of manually listing them.
 

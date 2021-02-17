@@ -10,7 +10,7 @@ the results were slower than expected.
 This solution:
 
 ```rust
-test solutions_using_include_exclude_must_extend_to_cardinality_greater_than_3 ... bench:     349,860 ns/iter (+/- 193,273)This 
+
 ```
 
 Elsewhere:

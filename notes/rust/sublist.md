@@ -14,7 +14,7 @@ the high 20 nanoseconds. Two were 10 nanoseconds, which used the `windows`
 function. One was 5 nanoseconds, which did not use the `windows` function.
 
 ```rust
-test huge_sublist_not_in_huge_list ... bench:          16 ns/iter (+/- 1)
+
 ```
 
 Viewing the community solutions may offer other approaches to this exercise

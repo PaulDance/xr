@@ -15,7 +15,6 @@ simplified by storing only minutes in the Clock struct. That would leave
 of hours and minutes only for `Display`, which is the only place that cares 
 about it.
 
-
 Instead of manually implementing `PartialEq`, it can be derived in an attribute.
 This poses no problems for the Clock struct since all of its fields are
 primitive values.

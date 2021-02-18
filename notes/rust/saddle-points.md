@@ -1,6 +1,6 @@
 Congratulations on passing all the tests!
 
-I benchmarked and the results were the slowest I've seen.
+I benchmarked your solution and the results were quite respectable.
 
 This solution:
 

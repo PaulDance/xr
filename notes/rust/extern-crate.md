@@ -1,7 +1,7 @@
-This is not needed
+This is not needed:
 
 ```rust
-extern crate lazy-static;
+extern crate ...;
 ```
 
 Beginning in the 2018 edition, `use` declarations can reference crates in the

@@ -10,7 +10,7 @@ some ~2 milliseconds. The fastest solution I've seen used
 This solution:
 
 ```rust
-test test_big_prime ... bench:     146,102 ns/iter (+/- 4,064)
+
 ```
 
 Elsewhere:

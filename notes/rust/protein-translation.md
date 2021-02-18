@@ -1,3 +1,9 @@
+Your solution:
+
+```rust
+
+```
+
 My solution using a `HashMap` to store pairs:
 
 ```rust

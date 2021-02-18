@@ -5,7 +5,7 @@ I benchmarked this solution and the result was slower than expected.
 This solution:
 
 ```rust
-test test_valid_number_with_an_odd_number_of_spaces ... bench:         218 ns/iter (+/- 26)
+
 ```
 
 Elsewhere:

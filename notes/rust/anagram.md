@@ -12,7 +12,7 @@ expected.
 This solution:
 
 ```rust
-test test_multiple_anagrams ... bench:      10,408 ns/iter (+/- 1,640)
+
 ```
 
 A solution using sort and HashSet:

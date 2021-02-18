@@ -2,14 +2,15 @@ Congratulations on passing all the tests!
 
  * I like this solution is succinct and readable.
 
-I benchmarked this solution and it is toward the low end of what I've seen so far..
+I benchmarked this solution and the result was quite respectable.
+
 This solution:
 
 ```rust
-test test_factors_include_large_prime ... bench:   2,210,295 ns/iter (+/- 170,206)
+
 ```
 
-Elsewhere
+Elsewhere:
 
 ```rust
 test test_factors_include_large_prime ... bench:     978,612 ns/iter (+/- 425,057)

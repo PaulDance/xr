@@ -16,3 +16,9 @@ the last clone of a filtered triplet:
 ```rust
 test test_triplets_for_large_number ... bench:  51,923,436 ns/iter (+/- 6,256,791)
 ```
+
+Your solution:
+
+```rust
+
+```

@@ -5,7 +5,7 @@ I benchmarked and the results were the slowest I've seen.
 This solution:
 
 ```rust
-test identify_all_saddle_points ... bench:       1,559 ns/iter (+/- 87)
+
 ```
 
 Elsewhere:

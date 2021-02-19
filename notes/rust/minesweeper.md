@@ -19,7 +19,7 @@ generating the neighboring positions, then you can simply apply it to the field
 using iterators with enumerates, maps and collects. Use `str::as_bytes` in
 order to get constant-time access to neighboring characters.
 
-Your solution is indeed a bit slow. I ran a few benchmarks based on the
+Your solution performs indeed a bit slow. I ran a few benchmarks based on the
 `large_board` unit test on my machine and got the following results:
 
 @insideoutclub's solution using iterators only:

@@ -10,7 +10,7 @@ Congratulations on passing all the tests!
  * I like the creation and use of a macro.
  * I like the comments.
  * I like this solution demonstrates a familiarity with itertools.
- * I like the familiarity with `unreachable!`
+ * I like the familiarity with `unreachable!`.
 
 As a style issue, perhaps some of the `if` expressions could be `match`
 expressions, but that's just a quibble.

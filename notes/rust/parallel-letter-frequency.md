@@ -55,6 +55,13 @@ value, therefore you can simply map loads to workers and reduce their results
 into one hashmap. This is known as the
 [map-reduce](https://en.wikipedia.org/wiki/MapReduce) method.
 
+I think the preparation of data concatenating all the string slices into one
+big owned string is very expensive. You should just split the work among
+workers by lines directly which is instantaneous because `input` is itself a
+slice. Of course, it takes advantage of the fact that lines are balanced in
+number of characters in the considered tests, but you should still take
+advantage of it.
+
 You probably noticed that it becomes worse than a sequential algorithm when
 considering small work loads. That is kind of expected in any parallelism
 attempt: setting up OS threads surprisingly takes a considerable amount of

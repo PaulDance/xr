@@ -17,7 +17,7 @@ It's also good to get familiar with other crates like
 [tokio](https://crates.io/crates/tokio) for various parallelism scenarios.
 
 The benchmark for large parallel was quite respectable. With the most recent
-Rust version the fastest I usually see is a sequential in the 700 microseconds
+Rust version, the fastest I usually see is a sequential in the 700 microseconds
 with parallel in the 300 microseconds. In all other benchmarks the sequential
 is usually faster than the parallel. Older versions of Rust usually were in the
 900 microseconds for sequential.

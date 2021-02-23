@@ -44,6 +44,18 @@ test bench_tiny_parallel    ... bench:          50 ns/iter (+/- 0)
 test bench_tiny_sequential  ... bench:          70 ns/iter (+/- 1)
 ```
 
+@Adenylatcyclase's solution using `crossbeam::scope` and fixed-size static
+arrays for individual frequency measurement instead of hashmaps:
+
+```rust
+test bench_large_parallel   ... bench:      62,066 ns/iter (+/- 2,085)
+test bench_large_sequential ... bench:     790,304 ns/iter (+/- 20,146)
+test bench_small_parallel   ... bench:       3,799 ns/iter (+/- 117)
+test bench_small_sequential ... bench:      26,791 ns/iter (+/- 390)
+test bench_tiny_parallel    ... bench:         303 ns/iter (+/- 7)
+test bench_tiny_sequential  ... bench:          74 ns/iter (+/- 1)
+```
+
 Your solution:
 
 ```rust

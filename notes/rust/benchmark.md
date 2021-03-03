@@ -34,3 +34,9 @@ Finally compile and run the benchmarks using `cargo +nightly bench`.
 
 [This article](http://seenaburns.com/benchmarking-rust-with-cargo-bench/)
 describes what happens in a bench test.
+
+If you wish to run the exact same benchmark as I do, you can get it using a
+[small tool](https://github.com/PaulDance/xr) I made in order to review faster.
+You don't have to use the plugin itself or even clone the entire repository if
+you only want this specific benchmark: you will find it under the
+`benches/rust` directory.

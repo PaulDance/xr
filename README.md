@@ -100,8 +100,9 @@ The usual workflow is as such:
 
 ### Haskell
 
-You can optionally override student's resolver by setting `XR_HASKELL_STACK_RESOLVER` to a valid resolver version.
-(e.g. `XR_HASKELL_STACK_RESOLVER=lts-16.21 xr t`)
+You can optionally override a student iteration's resolver by setting
+`XR_HASKELL_STACK_RESOLVER` to a valid resolver version, for example
+`XR_HASKELL_STACK_RESOLVER=lts-16.21 xr t`.
 
 ## Contributing
 

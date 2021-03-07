@@ -21,8 +21,8 @@ function _override_stack_resolver() {
 
 # Runs all the available tests.
 function _run_tests() {
-    _override_stack_resolver
-    stack test --ghc-options -Wall \
+    _override_stack_resolver \
+        && stack test --ghc-options -Wall \
         && hlint .
 }
 

@@ -28,6 +28,6 @@ function _run_tests() {
 
 # Just runs any available benchmark, importing still needs to be added.
 function _run_benches() {
-    _override_stack_resolver
-    stack bench --ghc-options -Wall --no-run-tests
+    _override_stack_resolver \
+        && stack bench --ghc-options -Wall --no-run-tests
 }

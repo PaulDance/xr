@@ -10,7 +10,7 @@ function _override_stack_resolver() {
         return
     fi
 
-    if ! stack --resolver="$XR_HASKELL_STACK_RESOLVER" eval '()' >/dev/null 2>/dev/null; then
+    if ! stack --resolver="$XR_HASKELL_STACK_RESOLVER" eval '()' 2>&1 >/dev/null; then
         echo Skipped resolver override as stack cannot recognize $XR_HASKELL_STACK_RESOLVER.
         return
     fi

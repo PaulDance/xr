@@ -3,8 +3,9 @@ function _override_stack_resolver() {
         return
     fi
 
-    # See https://docs.haskellstack.org/en/stable/pantry/#snapshot-location for resolver syntax.
-    # For the purpose of running exercises it's resonable just to allow lts and nightly.
+    # See https://docs.haskellstack.org/en/stable/pantry/#snapshot-location for
+    # the resolver syntax. For the purpose of running exercises, it's reasonable
+    # just to allow LTS and nightly.
     if ! [[ "$XR_HASKELL_STACK_RESOLVER" =~ ^(lts-[0-9\.]+|nightly-[0-9-]+)$ ]]; then
         echo Skipped resolver override as $XR_HASKELL_STACK_RESOLVER is not allowed.
         return

@@ -96,6 +96,13 @@ The usual workflow is as such:
  * When done for the day, you may run `xr clean` in order to remove all
    downloaded exercise submissions.
 
+## Track-specific settings
+
+### Haskell
+
+You can optionally override a student iteration's resolver by setting
+`XR_HASKELL_STACK_RESOLVER` to a valid resolver version, for example
+`XR_HASKELL_STACK_RESOLVER=lts-16.21 xr t`.
 
 ## Contributing
 

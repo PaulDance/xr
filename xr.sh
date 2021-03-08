@@ -21,7 +21,7 @@ Usage: xr [<command>] [<uuid>]
     n, notes  Print the mentoring notes for the current or given exercise.
     e, edit   Open the mentoring notes in an editor.
     t, test   Run the tests.
-    b, bench  Copy the custom benchmarks into 'benches' and run them.
+    b, bench  Copy the custom benchmarks into the local project and run them.
 EOF
 
 read -r -d '' _long_doc << EOF

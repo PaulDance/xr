@@ -38,7 +38,7 @@ Arguments:
 Commands:
     h, help   Display this message.
     c, clean  Confirm and remove all the downloaded student submissions from
-              the filesystem using \`exercism\` in order to determine their
+              the file system using \`exercism\` in order to determine their
               location.
     n, notes  Dump the contents of the mentoring notes for the current exercise
               to the standard output, as deduced by reading the exercise config,

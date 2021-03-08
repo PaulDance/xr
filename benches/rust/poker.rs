@@ -55,8 +55,6 @@ fn simple_bench_poker(b: &mut Bencher) {
     ];
 
     b.iter(|| {
-        if let Some(_) = winning_hands(&hands) {} else {
-            panic!("bad");
-        }
+        winning_hands(&hands).unwrap();
     });
 }

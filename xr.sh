@@ -62,9 +62,13 @@ EOF
 
 # Returns the value associated to the given key in the exercise's configuration.
 function _config_get() {
-    grep -Eo "\"$1\""':"[a-zA-Z0-9-]+"' "$_exo_config" \
+    if command -v jq >/dev/null; then
+        jq --arg elem "$1" -r '.[$elem]' "$_exo_config"
+    else
+        grep -Eo "\"$1\""':"[a-zA-Z0-9-]+"' "$_exo_config" \
         | cut -d':' -f2 \
         | cut -d'"' -f2
+    fi
 }
 
 # Downloads and goes to the directory of the given UUID's exercise.
@@ -89,9 +93,14 @@ function _is_uuid() {
     [[ "$1" =~ ^[[:xdigit:]]{32}$ ]]
 }
 
+# Finds a 32-char hex string from the input args
+function _extract_uuid() {
+    echo "$*" | grep -Ewo '[[:xdigit:]]{32}'
+}
+
 # Public function.
 function xr() {
-    if [[ "$#" == "0" || "$#" -gt "2" ]]; then
+    if [[ "$#" -eq 0 ]]; then
         echo "$_short_doc" >&2
         return 1
     else
@@ -107,7 +116,7 @@ function xr() {
             "n" | "notes" | "e" | "edit")
                 local note="$_dir/notes"
 
-                if [[ "$#" == "2" ]]; then
+                if [[ "$#" -eq 2 ]]; then
                     note="$note/$2.md"
                 else
                     note="$note/$(_config_get track)/$(_config_get exercise).md"
@@ -128,16 +137,20 @@ function xr() {
                 fi
             ;;
             "t" | "test" | "b" | "bench")
-                if [[ "$#" == "2" ]]; then
-                    if _is_uuid "$2"; then
-                        _dl_exo "$2"
+                local cmd=$1
+                shift
+
+                if [[ "$#" -ge 1 ]]; then
+                    local uuid
+                    if uuid=$(_extract_uuid "$*"); then
+                        _dl_exo "$uuid"
                     else
-                        echo "Invalid UUID: $2" >&2
+                        echo "Invalid UUID: $*" >&2
                         return 1
                     fi
                 fi
 
-                case "$1" in
+                case "$cmd" in
                     "t" | "test")
                         _src_track && _run_tests
                     ;;
@@ -147,8 +160,9 @@ function xr() {
                 esac
             ;;
             *)
-                if _is_uuid "$1"; then
-                    _dl_exo "$1" \
+                local uuid
+                if uuid=$(_extract_uuid "$*"); then
+                    _dl_exo "$uuid" \
                         && _src_track \
                         && _run_tests
                 else

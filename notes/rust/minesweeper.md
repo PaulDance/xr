@@ -28,6 +28,12 @@ unit test on my machine and got the following results:
 test large_board ... bench:         919 ns/iter (+/- 65)
 ```
 
+130eb5be1617412e9511035abf543034 -- @sputnik's solution using iterators only:
+
+```rust
+test large_board ... bench:         640 ns/iter (+/- 12)
+```
+
 My solution using iterators and manual listing with ugly conversions:
 
 ```rust

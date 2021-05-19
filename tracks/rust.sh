@@ -1,6 +1,6 @@
 # Runs all the available tests, including disabled ones.
 function _run_tests() {
-    cargo +nightly test --all-features -- -Z unstable-options --include-ignored
+    cargo test --all-features -- --include-ignored
 }
 
 # Copies the stored benchmarks into the dedicated sub-directory and runs them.
